@@ -38,8 +38,8 @@ public:
 
 
 template <class T>
-inline void MyList<T>::addBegin(T a) { // поставили &, чтобы можно было что-то присвоить и это появится в мэйне 
-    Node* t = new Node(a, head); // создали новый узел 
+inline void MyList<T>::addBegin(T a) { // ГЇГ®Г±ГІГ ГўГЁГ«ГЁ &, Г·ГІГ®ГЎГ» Г¬Г®Г¦Г­Г® ГЎГ»Г«Г® Г·ГІГ®-ГІГ® ГЇГ°ГЁГ±ГўГ®ГЁГІГј ГЁ ГЅГІГ® ГЇГ®ГїГўГЁГІГ±Гї Гў Г¬ГЅГ©Г­ГҐ 
+    Node* t = new Node(a, head); // Г±Г®Г§Г¤Г Г«ГЁ Г­Г®ГўГ»Г© ГіГ§ГҐГ« 
     if (!head) head = tail = t;
     else head = t;
 
@@ -47,7 +47,7 @@ inline void MyList<T>::addBegin(T a) { // поставили &, чтобы можно было что-то п
 
 template <class T>
 void MyList<T>::addEnd(T a) {
-    Node* t = new Node(a); // создали новый узел 
+    Node* t = new Node(a); // Г±Г®Г§Г¤Г Г«ГЁ Г­Г®ГўГ»Г© ГіГ§ГҐГ« 
     if (!head) {
         head = tail = t; return;
     }
@@ -97,3 +97,35 @@ inline void MyList<T>::deleteEl(T a)
         }
     }
 }
+
+//template<class T>
+//inline MyList<T>:: Node* listCopy(Node* head, Node*& tailCopy)
+//{
+//    Node* head1 = nullptr;
+//    Node* prev = nullptr;
+//    Node* tail = nullptr;
+//    for (Node* h = head; h; h = h->next) {
+//        tail = new Node(h->info);
+//        if (!head1)prev = head1 = tail;
+//        else prev->next = tail;
+//        prev = tail;
+//    }
+//    tailCopy = tail;
+//    return head1;
+//}
+
+//template<class T>
+// int MyList<T>::insertList(Node* head, int x)
+//{
+//    Node* nodeX = nullptr;
+//    Node* h;
+//    for (h = head; h && h->info != x; h = h->next);
+//    if (h) {
+//        Node* tailCopy = nullptr;
+//        Node* headCopy = listCopy(head, tailCopy);
+//        tailCopy->next = h->next;
+//        h->next = headCopy;
+//        return 0;
+//    }
+//    else return -1;
+//}
